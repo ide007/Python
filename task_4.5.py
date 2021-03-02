@@ -18,7 +18,7 @@ def currency_rate(curr):
         kurs[1] = float(kurs[1])
         print('Дата запроса :', date)
         print('Курс :', (kurs[0]), (curr), ' = ', "{0:.2f} RUB".format(kurs[1]))
-    return 0
+    return ''
 
 if __name__ == '__main__':
     from sys import argv
