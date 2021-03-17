@@ -1,17 +1,17 @@
-import os
+if __name__ == '__main__':
+
+    import os
+    from shutil import copytree
 
 
-def createTree(values, prefix=""):
-    for directory, paths in values.items():
-        dir_path = os.path.join(prefix, directory)
-        os.makedirs(dir_path, exist_ok=True)
-        if isinstance(paths, dict):
-            createTree(paths, dir_path)
-        else:
-            for i in paths:
-                if isinstance(i, dict):
-                    createTree(i, dir_path)
-                elif isinstance(i, str):
-                    with open(os.path.join(dir_path, f'{i}'), 'w') as f:
-                        f.write('')
+    def copy_dir():
+        source = 'my_project'
+        dir_to_copy = 'templates'
 
+        for root, dirs, files in os.walk(source):
+            if root.find(dir_to_copy) > 0 and len(files) == 0:
+                copytree(os.path.join(root), dir_to_copy, dirs_exist_ok=True)
+
+
+    copy_dir()
+    print('Копирование завершено')

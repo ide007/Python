@@ -1,7 +1,7 @@
 if __name__ == '__main__':
     import os
 
-    path = r'E:\Python'
+    path = os.path.abspath(os.getcwd())
     folder = 'some_data'
     fullPath = os.path.join(path, folder)
     my_dict = {}
@@ -23,5 +23,5 @@ if __name__ == '__main__':
                 i *= 10
             dict_cr(i)
 
-counter()
-print(my_dict)
+    counter()
+    print(my_dict)
