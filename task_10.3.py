@@ -18,7 +18,7 @@ class Cell:
 
     def make_order(self, l):
         rezu = ''
-        for i in range(int(self.cells / l)):
+        for i in range(int(self.cells // l)):
             rezu += '*' * l + '\n'
         rezu += '*' * (self.cells % l) + '\n'
         return rezu
